@@ -19,15 +19,9 @@
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
 
-        if (width > 480) {
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top
-            }, 500);
-        } else {
-            $('html, body').animate({
-                scrollTop: $($.attr(this, 'href')).offset().top - 59
-            }, 500);
-        }
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 59
+        }, 500);
     });
 
     function openMenu() {

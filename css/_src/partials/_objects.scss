@@ -4,3 +4,24 @@
     display: block;
     text-align: center;
 }
+
+@media only screen and (min-width: 1280px) {
+    .max-width {
+        max-width: 1280px;
+        width: 100%;
+        margin-left: auto; margin-right: auto;
+    }
+}
+
+// Custom scrollbar for Google Chrome
+// width
+::-webkit-scrollbar { width: 6px; }
+// Track
+::-webkit-scrollbar-track { background: #e6e6e6; border-left: 2px solid $off-white; }
+::-webkit-scrollbar-track:hover { background: #eee; }
+// Handle
+::-webkit-scrollbar-thumb {
+    background: $blue; border-radius: 6px;
+    box-shadow: 2px 0px 10px 5px rgba(33, 33, 33, .6);
+}
+::-webkit-scrollbar-thumb:hover { background: $dark-grey; }

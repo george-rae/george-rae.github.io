@@ -88,8 +88,31 @@ header {
     }
 
     @media only screen and (min-width: 600px) {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+        & > section {
+            height: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+
+        .mobile-nav-button { display: none; }
+        nav {
+            position: static;
+            display: inline-block;
+            transform: none;
+            width: 250px;
+            background: none;
+            padding: 0;
+            ol {
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 0; height: 100%;
+                font-size: 18px;
+                line-height: 1;
+                a { color: $dark-grey; }
+            }
+        }
     }
 }
