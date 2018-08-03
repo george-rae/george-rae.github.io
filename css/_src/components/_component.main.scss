@@ -24,14 +24,14 @@ body {
                 z-index: 2;
             }
 
-            &.about {
+            &.intro {
                 background-image: url('../images/top-background-image.jpeg');
                 background-color: dimgrey;
                 background-blend-mode: screen, difference, lighten;
                 background-size: auto auto;
             }
 
-            &.projects {
+            &.about, &.contact-us {
                 border-top: 2px solid $off-white;
                 background-color: $blue;
                 position: relative;
@@ -39,12 +39,45 @@ body {
                 &::after { border-top-color: $blue; }
             }
 
-            &.contact-us {
+            &.projects {
                 border-top: 2px solid $blue;
                 background-color: $off-white;
                 position: relative;
                 color: $blue;
             }
+        }
+    }
+
+    @media only screen and (min-width: 320px) {
+        .profile-image {
+            height: 150px; width: 150px;
+            border: 3px solid $blue;
+            background-image: url('../images/George-rae.jpg');
+            background-size: 150px 150px;
+            background-repeat: no-repeat;
+            background-color: #666;
+            background-blend-mode: screen, difference, lighten;
+            border-radius: 50%;
+            display: block;
+            margin-top: 59px;
+            margin: 59px auto 0;
+        }
+
+        .introduction {
+            margin-top: 30px;
+            padding: 14px 16px;
+            background-color: rgba(255, 255, 255, 0.6);
+            color: $dark-grey;
+
+            h1 {
+                font-size: 24px; line-height: 30px;
+                margin-bottom: 12px;
+                font-weight: 600;
+                letter-spacing: .75px;
+                color: $dark-grey;
+            }
+
+            p { line-height: 20px; margin-bottom: 10px; }
         }
     }
 }
