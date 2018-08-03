@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    background-color: $off-white;
+    &.nav--active { overflow: hidden; }
+
+    main {
+        height: 100%; width: 100%;
+        overflow: hidden;
+        & > section {
+            min-height: 100vh; height: 100%;
+            width: 100vw;
+            padding: 24px 18px;
+            position: relative;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 0; width: 0;
+                bottom: -32px; left: calc(50% - 15px);
+                border: 15px solid transparent;
+                border-top-color: $off-white;
+                z-index: 10;
+            }
+
+            &.about {
+                background-image: url('../images/top-background-image.jpeg');
+                background-color: dimgrey;
+                background-blend-mode: screen, difference, lighten;
+                background-size: auto auto;
+            }
+
+            &.projects {
+                border-top: 2px solid $off-white;
+                background-color: $blue;
+                position: relative;
+                color: $off-white;
+                &::after { border-top-color: $blue; }
+            }
+
+            &.contact-us {
+                border-top: 2px solid $blue;
+                background-color: $off-white;
+                position: relative;
+                color: $blue;
+            }
+        }
+    }
+}
