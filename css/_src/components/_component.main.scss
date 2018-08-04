@@ -24,14 +24,14 @@ body {
                 z-index: 2;
             }
 
-            &.intro {
+            &.about {
                 background-image: url('../images/top-background-image.jpeg');
                 background-color: dimgrey;
                 background-blend-mode: screen, difference, lighten;
-                background-size: auto auto;
+                background-size: auto 100%;
             }
 
-            &.about, &.contact-us {
+            &.projects {
                 border-top: 2px solid $off-white;
                 background-color: $blue;
                 position: relative;
@@ -39,7 +39,7 @@ body {
                 &::after { border-top-color: $blue; }
             }
 
-            &.projects {
+            &.contact-us {
                 border-top: 2px solid $blue;
                 background-color: $off-white;
                 position: relative;
@@ -63,21 +63,12 @@ body {
             margin: 59px auto 0;
         }
 
-        .introduction {
-            margin-top: 30px;
-            padding: 14px 16px;
-            background-color: rgba(255, 255, 255, 0.6);
+        .introduction h1 {
+            font-size: 24px; line-height: 30px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: .75px;
             color: $dark-grey;
-
-            h1 {
-                font-size: 24px; line-height: 30px;
-                margin-bottom: 12px;
-                font-weight: 600;
-                letter-spacing: .75px;
-                color: $dark-grey;
-            }
-
-            p { line-height: 20px; margin-bottom: 10px; }
         }
     }
 }
