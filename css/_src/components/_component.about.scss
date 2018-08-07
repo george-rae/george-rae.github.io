@@ -1,0 +1,55 @@
+section.about {
+    min-height: 100vh;
+    background-image: url('../images/top-background-image.jpeg');
+    background-color: dimgrey;
+    background-blend-mode: screen, difference, lighten;
+    background-size: auto 100%;
+    @media only screen and (min-width: 320px) {
+        .profile-image {
+            height: 150px; width: 150px;
+            border: 3px solid $blue;
+            background-image: url('../images/George-rae.jpg');
+            background-size: 150px 150px;
+            background-repeat: no-repeat;
+            background-color: #666;
+            background-blend-mode: screen, difference, lighten;
+            border-radius: 50%;
+            display: block;
+            margin-top: 59px;
+            margin: 59px auto 0;
+        }
+
+        .introduction h1 {
+            font-size: 24px; line-height: 30px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: .75px;
+            color: $dark-grey;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        div.intro-content {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding-top: 40px;
+            .profile-image {
+                width: 250px; height: 250px;
+                background-size: 100% 100%;
+            }
+            article {
+                width: 48%; display: inline-block;
+                &.introduction { margin-bottom: 25px; }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1280px) {
+        background-size: auto auto;
+        div.intro-content {
+            .profile-image { width: 300px; height: 300px; }
+            article { padding: 24px; }
+        }
+    }
+}

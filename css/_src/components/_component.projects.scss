@@ -1,0 +1,43 @@
+section.projects {
+    min-height: 50vh;
+    border-top: 2px solid $off-white;
+    background-color: $blue;
+    position: relative;
+    color: $off-white;
+    &::after { border-top-color: $blue; }
+
+    .website-list {
+        margin-top: 20px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        a { -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); }
+        li {
+            width: 100%; height: calc((100vw - 78px) * .6);
+            position: relative;
+            margin: 0 auto;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-color: $blue;
+            background-blend-mode: screen, lighten;
+            // filter: blur(2px) grayscale(90%);
+            margin-bottom: 20px;
+            border-radius: 10px;
+
+            &::after {
+                content: attr(data-title);
+                font-size: 16px; font-weight: 500;
+                display: inline-block;
+                position: absolute;
+                width: 150px; text-align: center;
+                line-height: 32px;
+                color: $off-black;
+                top: 50%; margin-top: -11px;
+                left: 50%; margin-left: -75px;
+                background-color: rgba(255, 255, 255, .8);
+            }
+        }
+        a:first-child li { background-image: url('../images/speaking-volumes.png'); }
+        a:last-child li { background-image: url('../images/rainbow-cafe.png'); }
+    }
+}

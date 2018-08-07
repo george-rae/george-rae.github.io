@@ -5,6 +5,36 @@
 @import 'partials/objects.scss';
 
 // Now do the specific styling options, e.g. Header/ Footer.
-@import 'components/component.main.scss';
-@import 'components/component.footer.scss';
 @import 'components/component.header.scss';
+@import 'components/component.about.scss';
+@import 'components/component.projects.scss';
+@import 'components/component.contact.scss';
+@import 'components/component.footer.scss';
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    background-color: $off-white;
+    &.nav--active { overflow: hidden; }
+
+    main {
+        height: 100%; width: 100%;
+        overflow: hidden;
+        & > section {
+            height: 100%; width: 100vw;
+            padding: 24px 18px 62px 18px;
+            position: relative;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 0; width: 0;
+                bottom: -32px; left: calc(50% - 15px);
+                border: 15px solid transparent;
+                border-top-color: $off-white;
+                z-index: 2;
+            }
+        }
+    }
+}
