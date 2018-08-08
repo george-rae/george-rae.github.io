@@ -6,38 +6,99 @@ section.projects {
     color: $off-white;
     &::after { border-top-color: $blue; }
 
-    .website-list {
+    .website-list, .personal-list {
         margin-top: 20px;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
         a { -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); }
         li {
-            width: 100%; height: calc((100vw - 78px) * .6);
+            width: 100%; height: calc((100vw - 78px) * .7);
             position: relative;
             margin: 0 auto;
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-color: $blue;
             background-blend-mode: screen, lighten;
-            // filter: blur(2px) grayscale(90%);
             margin-bottom: 20px;
             border-radius: 10px;
 
             &::after {
                 content: attr(data-title);
                 font-size: 16px; font-weight: 500;
-                display: inline-block;
+                width: 100%;
+                display: block;
                 position: absolute;
-                width: 150px; text-align: center;
+                text-align: center;
                 line-height: 32px;
                 color: $off-black;
                 top: 50%; margin-top: -11px;
-                left: 50%; margin-left: -75px;
                 background-color: rgba(255, 255, 255, .8);
             }
         }
-        a:first-child li { background-image: url('../images/speaking-volumes.png'); }
-        a:last-child li { background-image: url('../images/rainbow-cafe.png'); }
+        a.sv li { background-image: url('../images/speaking-volumes.png'); }
+        a.rc li { background-image: url('../images/rainbow-cafe.png'); }
+        a.vc li { background-image: url('../images/vue-checklist.png'); }
+        a.ctp li { background-image: url('../images/css-transition-hub.png'); }
+    }
+
+    @media only screen and (min-width: 600px) {
+        .website-list, .personal-list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            p { display: block; width: 100%; }
+            li {
+                display: inline-block;
+                width: 250px; height: 162.5px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        div.section-content {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            article { display: inline-block; width: 48%; }
+        }
+
+        .website-list, .personal-list {
+            display: flex;
+            flex-flow: column  nowrap;
+            justify-content: space-between;
+            text-align: center;
+
+            p { display: block; width: 100%; }
+            li {
+                display: inline-block;
+                width: 250px; height: 162.5px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        div.section-content {
+            article { display: inline-block; width: 48%; }
+        }
+
+        .website-list, .personal-list {
+            li {
+                width: 350px; height: 227.5px;
+                transition: filter .36s ease-out;
+                &::after {
+                    font-size: 20px; line-height: 45px;
+                    margin-top: -22.5px;
+                    color: $blue;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    filter: blur(2px) grayscale(90%);
+                    transition: filter .36s ease-in;
+                }
+            }
+        }
     }
 }

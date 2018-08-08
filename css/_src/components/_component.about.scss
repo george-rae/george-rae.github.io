@@ -1,5 +1,6 @@
 section.about {
-    min-height: 100vh;
+    min-height: 320px;
+    max-height: 2560px;
     background-image: url('../images/top-background-image.jpeg');
     background-color: dimgrey;
     background-blend-mode: screen, difference, lighten;
